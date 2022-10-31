@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Shooter</title>
+  </head>
+  <style>
+    body {
+      width: 100%;
+      overflow: hidden;
+      background: url("space.jpg");
+      background-size: cover;
+    }
+    #board {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      margin: 0px auto;
+      
+      left:300px;
+
+      overflow: hidden;
+    }
+
+    #jet {
+      position: absolute;
+      width: 40px;
+      height: 60px;
+      background: url("rocket.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      left: 50%;
+      bottom: 0px;
+    }
+
+    .bullets {
+      position: absolute;
+      bottom: 40px;
+      left: 51%;
+      width: 20px;
+      height: 20px;
+      background: url("bullet.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .rocks {
+      position: absolute;
+      top: 0px;
+      width: 60px;
+      height: 80px;
+      background: url("alien.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    #points {
+      position: absolute;
+      top: 0px;
+      margin: 40px;
+      opacity: 0.7;
+      font-size: 10em;
+      color: rgb(255, 0, 0);
+    }
+    *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    background-size: cover;
+}
+.content h2{
+    position:relative;
+
+}
+.content h2 {
+    position: absolute;
+    color:red;
+    transform: translate(-50%,50%);
+    font-size: 8rem;
+}
+.content h2:nth-child(1)
+{
+    color:transparent;
+    -webkit-text-stroke: 2px red;
+}
+.content h2:nth-child(2)
+{
+    color:red;
+    animation: animate 4s ease-in-out infinite;
+}
+@keyframes animate {
+    0%,100%{
+        clip-path: polygon(2% 51%, 13% 48%, 29% 39%, 37% 46%, 44% 52%, 54% 57%, 69% 56%, 86% 45%, 94% 42%, 99% 41%, 100% 98%, 1% 99%);
+    }
+     50%
+     {
+        clip-path: polygon(2% 80%, 11% 68%, 31% 49%, 45% 40%, 58% 44%, 69% 36%, 82% 28%, 89% 10%, 99% 3%, 98% 99%, 98% 99%, 2% 100%);
+     }
+}
+  </style>
+  <script src="app.js" defer></script>
+  <body>
+    <div class="content">
+      <h2>POINTS</h2>
+      <h2>POINTS</h2>
+    <div id="board">
+      <div class="rocks"></div>
+      <div id="jet"></div>
+    </div>
+    <div id="points">0</div>
+   
+  </div>
+  </body>
+</html>
